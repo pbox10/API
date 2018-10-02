@@ -89,7 +89,7 @@ class vivawallet {
     $tm_ref_id = "REF".substr(md5(uniqid(rand(), true)), 0, 9);
 	$TmSecureKey = 'd2ViaXQuYnovbGljZW5zZS50eHQ='; // for extra encryption options
 	
-	$amount_standard = number_format(($currencies->get_value($this->trcurrency) * $order->info['total']), 2, '.', '')
+	$amount_standard = number_format(($currencies->get_value($this->trcurrency) * $order->info['total']), 2, '.', '');
 	$vivawallet_amount = round($amount_standard * 100);
 	
     $language_query = tep_db_query("select code from " . TABLE_LANGUAGES . " where languages_id = '" . (int)$languages_id . "'");
